@@ -16,7 +16,7 @@ public class Shift {
         this.shiftDate = shiftDate;
         this.affection = affection;
     }
-    // Setters
+    // Settersk
     public void setShiftId(int shiftId) {
         this.shiftId = shiftId;
     }
