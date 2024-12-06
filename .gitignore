@@ -1,0 +1,123 @@
+# NetBeans specific files
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+.gradle/
+build/
+out/
+
+# Maven specific files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+spring.log
+
+# Application-specific files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Sensitive files
+application.yml
+application.properties
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Runtime files
+hs_err_pid*
+.recommenders/
+
+# Thrift generated code
+gen-*
+
+# Lombok generated code (if applicable)
+.lombok/
+
+# Test reports
+test-output/
+surefire-reports/
+
+# Eclipse specific files (in case the project is imported in Eclipse)
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ specific files
+*.ipr
+*.iws
+.idea/
+
+# Node.js (if frontend dependencies are present)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Operating system files
+Thumbs.db
+.DS_Store
+
+# Metadata from CI/CD or containers
+*.env
+.env.local
+.env.*.local
+.env.*.development
+.env.*.production
+docker-compose.override.yml
+docker-compose.yaml
+
+
+# Ignorar archivos y carpetas generados por NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+.nbm/
+**/nb-configuration.xml
+
+# Ignorar archivos generados por Maven
+target/
+logs/
+hs_err_pid*.log
+*.iml
+*.class
+*.war
+*.ear
+
+# Ignorar configuraciones del sistema operativo
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+
+# Ignorar archivos de configuración sensibles
+persistence.xml
+*.properties
+.env
+
