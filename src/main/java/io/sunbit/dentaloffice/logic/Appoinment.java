@@ -3,15 +3,15 @@ package io.sunbit.dentaloffice.logic;
 import java.time.LocalDateTime;
 
 
-public class Shift {
+public class Appoinment {
     // Attributes
     private int shiftId;
     private LocalDateTime shiftDate;
     private String affection;
     // Constructors
-    public Shift() {
+    public Appoinment() {
     }
-    public Shift(int shiftId, LocalDateTime shiftDate, String affection) {
+    public Appoinment(int shiftId, LocalDateTime shiftDate, String affection) {
         this.shiftId = shiftId;
         this.shiftDate = shiftDate;
         this.affection = affection;
