@@ -1,4 +1,4 @@
-package io.sunbit.dentaloffice.logic;
+package io.sunbit.dentistoffice.logic;
 
 import java.util.Date;
 import java.util.List;
@@ -8,17 +8,19 @@ public class Dentist extends Person{
     // Attributes
     private long dentistId;
     private String specialty;
-    private List<Shift>shifts;
+    private List<Appoinment>appoinments;
     private OfficeUser user;
     private Schedule schedule;
     // Constructors
     public Dentist() {
     }
-    public Dentist(long dentistId, String specialty, List<Shift> shifts, OfficeUser user, Schedule schedule, String dni, String name, String surname, String phone, String address, Date birthDate) {
+    public Dentist(long dentistId, String specialty, List<Appoinment> appoinments, 
+            OfficeUser user, Schedule schedule, String dni, String name, 
+            String surname, String phone, String address, Date birthDate) {
         super(dni, name, surname, phone, address, birthDate);
         this.dentistId = dentistId;
         this.specialty = specialty;
-        this.shifts = shifts;
+        this.appoinments = appoinments;
         this.user = user;
         this.schedule = schedule;
     }
@@ -29,8 +31,8 @@ public class Dentist extends Person{
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
     }
-    public void setShifts(List<Shift> shifts) {
-        this.shifts = shifts;
+    public void setAppoinment(List<Appoinment> appoinments) {
+        this.appoinments = appoinments;
     }
     public void setUser(OfficeUser user) {
         this.user = user;
@@ -45,8 +47,8 @@ public class Dentist extends Person{
     public String getSpecialty() {
         return specialty;
     }
-    public List<Shift> getShifts() {
-        return shifts;
+    public List<Appoinment> getAppoinment() {
+        return appoinments;
     }
     public OfficeUser getUser() {
         return user;

@@ -1,4 +1,4 @@
-package io.sunbit.dentaloffice.logic;
+package io.sunbit.dentistoffice.logic;
 
 import java.util.Date;
 import java.util.List;
@@ -10,17 +10,19 @@ public class Patient extends Person{
     private boolean hasMedicalInsurance;
     private String bloodType;
     private Responsible responsable;
-    private List<Shift> shifts;
+    private List<Appoinment> appoinments;
     // Constructors
     public Patient() {
     }
-    public Patient(long patientId, boolean hasMedicalInsurance, String bloodType, Responsible responsable, List<Shift> shifts, String dni, String name, String surname, String phone, String address, Date birthDate) {
+    public Patient(long patientId, boolean hasMedicalInsurance, String bloodType, 
+            Responsible responsable, List<Appoinment> appoinments, String dni, 
+            String name, String surname, String phone, String address, Date birthDate) {
         super(dni, name, surname, phone, address, birthDate);
         this.patientId = patientId;
         this.hasMedicalInsurance = hasMedicalInsurance;
         this.bloodType = bloodType;
         this.responsable = responsable;
-        this.shifts = shifts;
+        this.appoinments = appoinments;
     }
     // Getters
     public long getPatientId() {
@@ -36,8 +38,8 @@ public class Patient extends Person{
     public Responsible getResponsable() {
         return responsable;
     }
-    public List<Shift> getShifts() {
-        return shifts;
+    public List<Appoinment> getAppoinments() {
+        return appoinments;
     }
     // Setters
     public void setPatientId(long patientId) {
@@ -52,7 +54,7 @@ public class Patient extends Person{
     public void setResponsable(Responsible responsable) {
         this.responsable = responsable;
     }
-    public void setShifts(List<Shift> shifts) {
-        this.shifts = shifts;
+    public void setAppoinments(List<Appoinment> appoinments) {
+        this.appoinments = appoinments;
     }
 }

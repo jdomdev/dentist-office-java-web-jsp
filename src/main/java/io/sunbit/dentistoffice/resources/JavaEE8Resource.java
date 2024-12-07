@@ -1,4 +1,4 @@
-package io.sunbit.dentaloffice.resources;
+package io.sunbit.dentistoffice.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

@@ -1,4 +1,4 @@
-package io.sunbit.dentaloffice.logic;
+package io.sunbit.dentistoffice.logic;
 
 import java.time.LocalDateTime;
 

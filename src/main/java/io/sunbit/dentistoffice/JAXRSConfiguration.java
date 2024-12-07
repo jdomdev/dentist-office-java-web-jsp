@@ -1,4 +1,4 @@
-package io.sunbit.dentaloffice;
+package io.sunbit.dentistoffice;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
