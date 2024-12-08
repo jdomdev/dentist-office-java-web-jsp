@@ -1,58 +1,56 @@
 package io.sunbit.dentistoffice.logic;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-
+@Entity
 public class Patient extends Person{
     // Atributes
-    private long patientId;
+    //private long patientId;
     private boolean hasMedicalInsurance;
     private String bloodType;
-    private Responsible responsable;
+    @OneToOne
+    private Responsible responsible;
+    @OneToMany(mappedBy = "patient")
     private List<Appoinment> appoinments;
     // Constructors
     public Patient() {
     }
-    public Patient(long patientId, boolean hasMedicalInsurance, String bloodType, 
-            Responsible responsable, List<Appoinment> appoinments, String dni, 
-            String name, String surname, String phone, String address, Date birthDate) {
+
+    public Patient(boolean hasMedicalInsurance, String bloodType, Responsible responsible, 
+                   List<Appoinment> appoinments, String dni, String name, 
+                   String surname, String phone, String address, LocalDate birthDate) {
         super(dni, name, surname, phone, address, birthDate);
-        this.patientId = patientId;
         this.hasMedicalInsurance = hasMedicalInsurance;
         this.bloodType = bloodType;
-        this.responsable = responsable;
+        this.responsible = responsible;
         this.appoinments = appoinments;
-    }
-    // Getters
-    public long getPatientId() {
-        return patientId;
-    }
+    }       
+    // Getters    
     public boolean isHasMedicalInsurance() {
         return hasMedicalInsurance;
     }
     public String getBloodType() {
         return bloodType;
     }
-
-    public Responsible getResponsable() {
-        return responsable;
+    public Responsible getResponsible() {
+        return responsible;
     }
     public List<Appoinment> getAppoinments() {
         return appoinments;
     }
-    // Setters
-    public void setPatientId(long patientId) {
-        this.patientId = patientId;
-    }
+    // Setters    
     public void setHasMedicalInsurance(boolean hasMedicalInsurance) {
         this.hasMedicalInsurance = hasMedicalInsurance;
     }
     public void setBloodType(String bloodType) {
         this.bloodType = bloodType;
     }
-    public void setResponsable(Responsible responsable) {
-        this.responsable = responsable;
+    public void setResponsible(Responsible responsible) {
+        this.responsible = responsible;
     }
     public void setAppoinments(List<Appoinment> appoinments) {
         this.appoinments = appoinments;

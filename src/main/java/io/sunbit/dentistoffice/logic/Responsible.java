@@ -1,31 +1,26 @@
 package io.sunbit.dentistoffice.logic;
 
-import java.util.Date;
+import java.time.LocalDate;
+import javax.persistence.Entity;
 
-
+@Entity
 public class Responsible extends Person{
     // Attributes
-    private long responsibleId;
+    //private long responsibleId;
     private String respType;
     // Constructors
     public Responsible() {
     }
-    public Responsible(long responsibleId, String respType, String dni, String name, String surname, String phone, String address, Date birthDate) {
+    public Responsible(String respType, String dni, String name, String surname, 
+                       String phone, String address, LocalDate birthDate) {
         super(dni, name, surname, phone, address, birthDate);
-        this.responsibleId = responsibleId;
         this.respType = respType;
-    }
-    // Setters
-    public void setResponsibleId(long responsibleId) {
-        this.responsibleId = responsibleId;
-    }
+    }    
+    // Setters   
     public void setRespType(String respType) {
         this.respType = respType;
     }
-    // Getters
-    public long getResponsibleId() {
-        return responsibleId;
-    }
+    // Getters    
     public String getRespType() {
         return respType;
     }    

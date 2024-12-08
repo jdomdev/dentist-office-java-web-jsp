@@ -1,19 +1,40 @@
 package io.sunbit.dentistoffice.logic;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-public class Person {
+
+/**
+ * We instruct it to build a table for each child class it has.
+ * @author bytetech
+ */
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class Person implements Serializable {
     // Attributes
+    // We create a unique id for the parent class and delete the id of the child classes.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String dni;
     private String name;
     private String surname;
     private String phone;
     private String address;
-    private Date birthDate;
+    // Date Mapping
+    // It's not necessary: @Temporal(TemporalType.TIMESTAMP)
+    private LocalDate birthDate;
     // Constructors
     public Person() {
     }
-    public Person(String dni, String name, String surname, String phone, String address, Date birthDate) {        
+    public Person(String dni, String name, String surname, String phone, 
+                  String address, LocalDate birthDate) {        
         this.dni = dni;
         this.name = name;
         this.surname = surname;
@@ -37,7 +58,7 @@ public class Person {
     public String getAddress() {
         return address;
     }
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
     // Setters
@@ -56,7 +77,7 @@ public class Person {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 }

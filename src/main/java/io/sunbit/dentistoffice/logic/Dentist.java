@@ -1,33 +1,37 @@
 package io.sunbit.dentistoffice.logic;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
-
+@Entity
 public class Dentist extends Person{
     // Attributes
-    private long dentistId;
+    //private long dentistId;
     private String specialty;
+    // Bidirectional relation:
+    // Dentists will know the appoinments, and the appoinments will know their dentists.
+    @OneToMany(mappedBy="dentist")//-> Element searched in Appoinment class.
     private List<Appoinment>appoinments;
+    @OneToOne
     private OfficeUser user;
+    @OneToOne
     private Schedule schedule;
     // Constructors
     public Dentist() {
     }
-    public Dentist(long dentistId, String specialty, List<Appoinment> appoinments, 
-            OfficeUser user, Schedule schedule, String dni, String name, 
-            String surname, String phone, String address, Date birthDate) {
+    public Dentist(String specialty, List<Appoinment> appoinments, OfficeUser user, 
+            Schedule schedule, String dni, String name, String surname, 
+            String phone, String address, LocalDate birthDate) {
         super(dni, name, surname, phone, address, birthDate);
-        this.dentistId = dentistId;
         this.specialty = specialty;
         this.appoinments = appoinments;
         this.user = user;
         this.schedule = schedule;
     }
     // Setters
-    public void setDentistId(long dentistId) {
-        this.dentistId = dentistId;
-    }
     public void setSpecialty(String specialty) {
         this.specialty = specialty;
     }
@@ -40,10 +44,7 @@ public class Dentist extends Person{
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
     }
-    // Getters
-    public long getDentistId() {
-        return dentistId;
-    }
+    // Getters  
     public String getSpecialty() {
         return specialty;
     }

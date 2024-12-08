@@ -1,31 +1,29 @@
 package io.sunbit.dentistoffice.logic;
 
-import java.util.Date;
+import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
-
+@Entity
 public class Secretary extends Person{
     // Attributes
-    private long secretaryId;
+    //private long secretaryId;
     private String department;
+    @OneToOne
+    private OfficeUser user;
     // Constructors
     public Secretary() {
     }
-    public Secretary(long secretaryId, String department, String dni, String name, String surname, String phone, String address, Date birthDate) {
+    public Secretary(String department, String dni, String name, String surname, 
+                     String phone, String address, LocalDate birthDate) {
         super(dni, name, surname, phone, address, birthDate);
-        this.secretaryId = secretaryId;
         this.department = department;
-    }
-    // Setters
-    public void setSecretaryId(long secretaryId) {
-        this.secretaryId = secretaryId;
-    }
+    } 
+    // Setters    
     public void setDepartment(String department) {
         this.department = department;
     }
-    // Getters
-    public long getSecretaryId() {
-        return secretaryId;
-    }
+    // Getters    
     public String getDepartment() {
         return department;
     }
