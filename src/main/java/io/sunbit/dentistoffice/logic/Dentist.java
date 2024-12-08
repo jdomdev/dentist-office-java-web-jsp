@@ -22,10 +22,8 @@ public class Dentist extends Person{
     // Constructors
     public Dentist() {
     }
-    public Dentist(String specialty, List<Appoinment> appoinments, OfficeUser user, 
-            Schedule schedule, String dni, String name, String surname, 
-            String phone, String address, LocalDate birthDate) {
-        super(dni, name, surname, phone, address, birthDate);
+    public Dentist(String specialty, List<Appoinment> appoinments, OfficeUser user, Schedule schedule, long id, String dni, String name, String surname, String phone, String address, LocalDate birthDate) {
+        super(id, dni, name, surname, phone, address, birthDate);
         this.specialty = specialty;
         this.appoinments = appoinments;
         this.user = user;

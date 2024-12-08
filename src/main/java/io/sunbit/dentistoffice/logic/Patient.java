@@ -19,16 +19,16 @@ public class Patient extends Person{
     // Constructors
     public Patient() {
     }
-
-    public Patient(boolean hasMedicalInsurance, String bloodType, Responsible responsible, 
-                   List<Appoinment> appoinments, String dni, String name, 
-                   String surname, String phone, String address, LocalDate birthDate) {
-        super(dni, name, surname, phone, address, birthDate);
+    public Patient(boolean hasMedicalInsurance, String bloodType, 
+                   Responsible responsible, List<Appoinment> appoinments, 
+                   long id, String dni, String name, String surname, 
+                   String phone, String address, LocalDate birthDate) {
+        super(id, dni, name, surname, phone, address, birthDate);
         this.hasMedicalInsurance = hasMedicalInsurance;
         this.bloodType = bloodType;
         this.responsible = responsible;
         this.appoinments = appoinments;
-    }       
+    }
     // Getters    
     public boolean isHasMedicalInsurance() {
         return hasMedicalInsurance;

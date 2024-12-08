@@ -33,8 +33,9 @@ public class Person implements Serializable {
     // Constructors
     public Person() {
     }
-    public Person(String dni, String name, String surname, String phone, 
-                  String address, LocalDate birthDate) {        
+    public Person(long id, String dni, String name, String surname, 
+                  String phone, String address, LocalDate birthDate) {
+        this.id = id;
         this.dni = dni;
         this.name = name;
         this.surname = surname;
@@ -42,7 +43,11 @@ public class Person implements Serializable {
         this.address = address;
         this.birthDate = birthDate;
     }
+
     // Getters
+    public long getId() {
+        return id;
+    }
     public String getDni() {
         return dni;
     }
@@ -62,6 +67,9 @@ public class Person implements Serializable {
         return birthDate;
     }
     // Setters
+    public void setId(long id) {
+        this.id = id;
+    }    
     public void setDni(String dni) {
         this.dni = dni;
     }

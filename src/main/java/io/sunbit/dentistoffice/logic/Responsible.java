@@ -11,9 +11,10 @@ public class Responsible extends Person{
     // Constructors
     public Responsible() {
     }
-    public Responsible(String respType, String dni, String name, String surname, 
-                       String phone, String address, LocalDate birthDate) {
-        super(dni, name, surname, phone, address, birthDate);
+    public Responsible(String respType, long id, String dni, String name, 
+                       String surname, String phone, String address, 
+                       LocalDate birthDate) {
+        super(id, dni, name, surname, phone, address, birthDate);
         this.respType = respType;
     }    
     // Setters   

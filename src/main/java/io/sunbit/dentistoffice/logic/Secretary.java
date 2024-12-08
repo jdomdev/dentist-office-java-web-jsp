@@ -14,11 +14,13 @@ public class Secretary extends Person{
     // Constructors
     public Secretary() {
     }
-    public Secretary(String department, String dni, String name, String surname, 
-                     String phone, String address, LocalDate birthDate) {
-        super(dni, name, surname, phone, address, birthDate);
+    public Secretary(String department, OfficeUser user, long id, String dni, 
+                     String name, String surname, String phone, String address, 
+                     LocalDate birthDate) {
+        super(id, dni, name, surname, phone, address, birthDate);
         this.department = department;
-    } 
+        this.user = user;
+    }
     // Setters    
     public void setDepartment(String department) {
         this.department = department;
