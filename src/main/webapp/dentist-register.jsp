@@ -5,7 +5,7 @@
 <%@include file="components/body-start.jsp" %>
 
 <h1>Dentist Register</h1>
-<p>This a test</p>
+<p>This is the form to register the DENTISTS.</p>
 
 <form class="user">
     <div class="form-group col">

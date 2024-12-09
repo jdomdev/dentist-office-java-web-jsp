@@ -61,12 +61,29 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
-                        <a class="collapse-item" href="">Patient Discharge</a>
+                        <a class="collapse-item" href="">Patient Register</a>
                         <a class="collapse-item" href="">See Patients</a>                                              
                     </div>
                 </div>
             </li>
 
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOfficeUsers"
+                    aria-expanded="true" aria-controls="collapseOfficeUsers">
+                    <i class="fas fa-user-injured"></i>
+                    <span>Office-User</span>
+                </a>
+                <div id="collapseOfficeUsers" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Options:</h6>
+                        <a class="collapse-item" href="">Office-User Register</a>
+                        <a class="collapse-item" href="">See Patients</a>                                              
+                    </div>
+                </div>
+            </li>
+            
             <!-- Divider -->
             <hr class="sidebar-divider">
 
