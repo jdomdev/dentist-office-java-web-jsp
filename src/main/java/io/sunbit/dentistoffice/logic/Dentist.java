@@ -16,17 +16,20 @@ public class Dentist extends Person{
     @OneToMany(mappedBy="dentist")//-> Element searched in Appoinment class.
     private List<Appoinment>appoinments;
     @OneToOne
-    private OfficeUser user;
+    private OfficeUser officeUser;
     @OneToOne
     private Schedule schedule;
     // Constructors
     public Dentist() {
     }
-    public Dentist(String specialty, List<Appoinment> appoinments, OfficeUser user, Schedule schedule, long id, String dni, String name, String surname, String phone, String address, LocalDate birthDate) {
+    public Dentist(String specialty, List<Appoinment> appoinments, 
+                   OfficeUser officeUser, Schedule schedule, long id, 
+                   String dni, String name, String surname, String phone, 
+                   String address, LocalDate birthDate) {
         super(id, dni, name, surname, phone, address, birthDate);
         this.specialty = specialty;
         this.appoinments = appoinments;
-        this.user = user;
+        this.officeUser = officeUser;
         this.schedule = schedule;
     }
     // Setters
@@ -36,8 +39,8 @@ public class Dentist extends Person{
     public void setAppoinment(List<Appoinment> appoinments) {
         this.appoinments = appoinments;
     }
-    public void setUser(OfficeUser user) {
-        this.user = user;
+    public void setOfficeUser(OfficeUser officeUser) {
+        this.officeUser = officeUser;
     }
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
@@ -49,8 +52,8 @@ public class Dentist extends Person{
     public List<Appoinment> getAppoinment() {
         return appoinments;
     }
-    public OfficeUser getUser() {
-        return user;
+    public OfficeUser getOfficeUser() {
+        return officeUser;
     }    
     public Schedule getSchedule() {
         return schedule;
