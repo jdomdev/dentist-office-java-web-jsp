@@ -45,7 +45,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="dentist-register.jsp">Dentist Register</a>
-                        <a class="collapse-item" href="">See Dentists</a>
+                        <a class="collapse-item" href="">View Dentists</a>
                     </div>
                 </div>
             </li>
@@ -62,7 +62,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="">Patient Register</a>
-                        <a class="collapse-item" href="">See Patients</a>                                              
+                        <a class="collapse-item" href="">View Patients</a>                                              
                     </div>
                 </div>
             </li>
@@ -79,7 +79,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="user-register.jsp">Office-User Register</a>
-                        <a class="collapse-item" href="">See Patients</a>                                              
+                        <a class="collapse-item" href="view-users.jsp">View Office-Users</a>                                              
                     </div>
                 </div>
             </li>
