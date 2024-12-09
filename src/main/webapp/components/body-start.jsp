@@ -78,7 +78,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
-                        <a class="collapse-item" href="">Office-User Register</a>
+                        <a class="collapse-item" href="user-register.jsp">Office-User Register</a>
                         <a class="collapse-item" href="">See Patients</a>                                              
                     </div>
                 </div>

@@ -18,10 +18,10 @@ public class Appoinment implements Serializable {
     private LocalDateTime appoinmentDate;
     private String affection;
     @ManyToOne
-    @JoinColumn(name = "id")//->relation,foreign key
+    @JoinColumn(name = "dentist_id")//->relation,foreign key
     private Dentist dentist;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "patient_id")
     private Patient patient;
     // Constructors
     public Appoinment() {
