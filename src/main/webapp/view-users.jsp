@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="io.sunbit.dentistoffice.logic.OfficeUser"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/header.jsp" %>
 <%@include file="components/body-start.jsp" %>
@@ -29,12 +31,18 @@
                             <th>Rol</th> 
                         </tr>
                     </tfoot>
+                    
+                    <%
+                        List<OfficeUser>officeUsers = (List)request.getSession().getAttribute("officeUsers");                        
+                    %>                    
                     <tbody>
+                        <%for(OfficeUser officeUser:officeUsers){%>
                         <tr>
-                            <td>1</td>
-                            <td>juanro</td>
-                            <td>Account Manager</td>
+                            <td><%=officeUser.getUserId()%></td>
+                            <td><%=officeUser.getUserName()%></td>
+                            <td><%=officeUser.getRol()%></td>
                         </tr>
+                        <%}%>
                     </tbody>
                 </table>
             </div>

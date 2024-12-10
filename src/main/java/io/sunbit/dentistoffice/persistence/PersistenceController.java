@@ -1,6 +1,7 @@
 package io.sunbit.dentistoffice.persistence;
 
 import io.sunbit.dentistoffice.logic.OfficeUser;
+import java.util.List;
 
 
 public class PersistenceController {
@@ -15,6 +16,10 @@ public class PersistenceController {
 
     public void createUser(OfficeUser officeUser) {
         officeUserJpa.create(officeUser);
+    }
+
+    public List<OfficeUser> getOfficeUsers() {
+        return officeUserJpa.findAllOfficeUsers();
     }
     
 }

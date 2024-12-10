@@ -1,6 +1,7 @@
 package io.sunbit.dentistoffice.logic;
 
 import io.sunbit.dentistoffice.persistence.PersistenceController;
+import java.util.List;
 
 
 public class Controller {
@@ -13,5 +14,9 @@ public class Controller {
         officeUser.setPassword(password);
         officeUser.setRol(rol);
         persistenceControl.createUser(officeUser);
+    }
+
+    public List<OfficeUser> getOfficeUsers() {
+        return persistenceControl.getOfficeUsers();
     }
 }
