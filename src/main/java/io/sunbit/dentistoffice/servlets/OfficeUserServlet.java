@@ -44,6 +44,7 @@ public class OfficeUserServlet extends HttpServlet {
         // Test
         //System.out.println("Name: "+userName+"\nPassword: "+password+"\nRol: "+rol);
         control.createUser(userName, password, rol);        
+        response.sendRedirect("index.jsp");
     }
     @Override
     public String getServletInfo() {

@@ -10,7 +10,7 @@
 <form class="user" action="OfficeUserServlet" method="POST">
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <!-- not id="user-name"-->
+            <!-- We send name="user-name", not id="user-name"-->
             <input type="text" class="form-control form-control-user" name="user-name"
                 placeholder="User Name">
         </div>        

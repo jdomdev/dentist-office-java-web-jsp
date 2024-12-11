@@ -44,14 +44,14 @@
                             <td><%=officeUser.getUserName()%></td>
                             <td><%=officeUser.getRol()%></td>
                             <td style="display: flex; width: 230px">                            
-                                <form name="delete-user" action="UserDeletionServlet" method="POST">
+                                <form name="user-deletion" action="UserDeletionServlet" method="POST">
                                     <button type="submit" class="btn btn-danger btn-user" style="margin-right: 5px">
                                         <i class="fas fa-trash-alt"></i> Delete                      
                                     </button>
                                     <!-- This is the data(user-id) which is sending to /UserDeletionServlet-->
                                     <input type="hidden" name="user-id" value="<%=officeUser.getUserId()%>"/>                        
                                 </form>
-                                <form name="edit-user" action="user-update.jsp" method="POST">
+                                <form name="user-update" action="user-update.jsp" method="POST">
                                     <button type="submit" class="btn btn-warning btn-user" style="margin-left: 5px">
                                         <i class="fas fa-pencil-alt"></i> Update
                                     </button>                                    
