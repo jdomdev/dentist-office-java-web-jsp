@@ -19,4 +19,13 @@ public class Controller {
     public List<OfficeUser> getOfficeUsers() {
         return persistenceControl.getOfficeUsers();
     }
+    public void deleteUser(long userId) {
+        persistenceControl.deleteUser(userId);
+    }
+    public OfficeUser getOfficeUser(long userId) {
+        return persistenceControl.getOfficeUser(userId);
+    }
+    public void updateUser(OfficeUser officeUser) {
+        persistenceControl.updateUser(officeUser);
+    }
 }

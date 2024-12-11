@@ -21,7 +21,8 @@
                         <tr>
                             <th>Id</th>
                             <th>User Name</th>
-                            <th>Rol</th>                            
+                            <th>Rol</th>
+                            <th style="width:210px">Option</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -29,6 +30,7 @@
                             <th>Id</th>
                             <th>User Name</th>
                             <th>Rol</th> 
+                            <th style="width:210px">Option</th>
                         </tr>
                     </tfoot>
                     
@@ -38,9 +40,24 @@
                     <tbody>
                         <%for(OfficeUser officeUser:officeUsers){%>
                         <tr>
-                            <td><%=officeUser.getUserId()%></td>
+                            <td id="userId<%=officeUser.getUserId()%>"><%=officeUser.getUserId()%></td>
                             <td><%=officeUser.getUserName()%></td>
                             <td><%=officeUser.getRol()%></td>
+                            <td style="display: flex; width: 230px">                            
+                                <form name="delete-user" action="UserDeletionServlet" method="POST">
+                                    <button type="submit" class="btn btn-danger btn-user" style="margin-right: 5px">
+                                        <i class="fas fa-trash-alt"></i> Delete                      
+                                    </button>
+                                    <!-- This is the data(user-id) which is sending to /UserDeletionServlet-->
+                                    <input type="hidden" name="user-id" value="<%=officeUser.getUserId()%>"/>                        
+                                </form>
+                                <form name="edit-user" action="user-update.jsp" method="POST">
+                                    <button type="submit" class="btn btn-warning btn-user" style="margin-left: 5px">
+                                        <i class="fas fa-pencil-alt"></i> Update
+                                    </button>                                    
+                                    <input type="hidden" name="user-id" value="<%=officeUser.getUserId()%>" />
+                                </form>                    
+                            </td>
                         </tr>
                         <%}%>
                     </tbody>
