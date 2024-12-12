@@ -12,7 +12,7 @@ public class Controller {
         OfficeUser officeUser = new OfficeUser();
         officeUser.setUserName(userName);
         officeUser.setPassword(password);
-        officeUser.setRol(rol);
+        officeUser.setRole(rol);
         persistenceControl.createUser(officeUser);
     }
 

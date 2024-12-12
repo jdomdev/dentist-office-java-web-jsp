@@ -42,7 +42,7 @@
                         <tr>
                             <td id="userId<%=officeUser.getUserId()%>"><%=officeUser.getUserId()%></td>
                             <td><%=officeUser.getUserName()%></td>
-                            <td><%=officeUser.getRol()%></td>
+                            <td><%=officeUser.getRole()%></td>
                             <td style="display: flex; width: 230px">                            
                                 <form name="user-deletion" action="UserDeletionServlet" method="POST">
                                     <button type="submit" class="btn btn-danger btn-user" style="margin-right: 5px">

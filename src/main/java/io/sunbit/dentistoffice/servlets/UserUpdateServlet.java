@@ -23,14 +23,14 @@ public class UserUpdateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Controller control = new Controller();
-        OfficeUser officeUser = new OfficeUser();
+        OfficeUser userToUp = new OfficeUser();
         // Get the user-id of the submitted form                
         String userIdParam = request.getParameter("user-id");
         if (userIdParam != null && !userIdParam.isEmpty()) {
             Long userId = Long.parseLong(userIdParam);
             // Call the Controller->PersistenceController->JPA to get the user's details      
-            officeUser = control.getOfficeUser(userId);
-            if (officeUser != null) {                
+            userToUp = control.getOfficeUser(userId);
+            if (userToUp != null) {                
             } else {
                 System.out.println("<p>User does not exist.</p>");
             }
@@ -38,7 +38,7 @@ public class UserUpdateServlet extends HttpServlet {
             System.out.println("<p>Invalid user-id.</p>");
         }
         HttpSession mySession = request.getSession();
-        mySession.setAttribute("officeUser", officeUser);
+        mySession.setAttribute("userToUp", userToUp);
         //request.setAttribute("officeUser", officeUser);
         response.sendRedirect("user-update.jsp");
     }    
@@ -51,9 +51,11 @@ public class UserUpdateServlet extends HttpServlet {
         String userName = request.getParameter("user-name");
         String password = request.getParameter("password");
         String role = request.getParameter("role");
-        OfficeUser officeUser = new OfficeUser(userId, userName, password, role);
-        
-        control.updateUser(officeUser);
+        OfficeUser userToUp = (OfficeUser)request.getSession().getAttribute("userToUp");
+        userToUp.setUserName(userName);
+        userToUp.setPassword(password);
+        userToUp.setRole(role);
+        control.updateUser(userToUp);
         // Reloading view users table from DB
         response.sendRedirect("OfficeUserServlet");
     }   
