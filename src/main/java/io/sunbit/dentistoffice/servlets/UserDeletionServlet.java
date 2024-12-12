@@ -25,8 +25,7 @@ public class UserDeletionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            long userId = Long.parseLong(request.getParameter("user-id"));
-            //System.out.println("User ID: " + userId);//->Test.
+            long userId = Long.parseLong(request.getParameter("user-id"));            
             control.deleteUser(userId);
             // Reloading view users table from DB
             response.sendRedirect("OfficeUserServlet");

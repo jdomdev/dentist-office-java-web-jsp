@@ -8,11 +8,11 @@ public class Controller {
     
     PersistenceController persistenceControl = new PersistenceController();
     
-    public void createUser(String userName, String password, String rol){
+    public void createUser(String userName, String password, String userRole){
         OfficeUser officeUser = new OfficeUser();
         officeUser.setUserName(userName);
         officeUser.setPassword(password);
-        officeUser.setRole(rol);
+        officeUser.setUserRole(userRole);
         persistenceControl.createUser(officeUser);
     }
 

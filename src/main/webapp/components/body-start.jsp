@@ -72,7 +72,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOfficeUsers"
                     aria-expanded="true" aria-controls="collapseOfficeUsers">
                     <i class="fas fa-user-injured"></i>
-                    <span>Office-User</span>
+                    <span>Office User</span>
                 </a>
                 <div id="collapseOfficeUsers" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
@@ -155,7 +155,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        
                         <!-- Deleted "Generate Report" button -->
                         
                     <!-- ** DELETED MAIN CONTENT **-->

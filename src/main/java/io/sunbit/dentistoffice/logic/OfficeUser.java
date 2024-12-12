@@ -14,15 +14,15 @@ public class OfficeUser implements Serializable {
     private long userId;
     private String userName;
     private String password;
-    private String role;
+    private String userRole;
     // Constructors
     public OfficeUser() {
     }
-    public OfficeUser(long userId, String userName, String password, String role) {        
+    public OfficeUser(long userId, String userName, String password, String userRole) {        
         this.userId = userId;
         this.userName = userName;
         this.password = password;
-        this.role = role;
+        this.userRole = userRole;
     }
     // Setters
     public void setUserId(long userId) {
@@ -34,8 +34,8 @@ public class OfficeUser implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setRole(String role) {
-        this.role = role;
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
     // Getters
     public long getUserId() {
@@ -47,7 +47,7 @@ public class OfficeUser implements Serializable {
     public String getPassword() {
         return password;
     }
-    public String getRole() {
-        return role;
+    public String getUserRole() {
+        return userRole;
     }    
 }

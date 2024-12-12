@@ -4,7 +4,7 @@
 <%@include file="components/header.jsp" %>
 <%@include file="components/body-start.jsp" %>
 
-<h1>Office-User Updating</h1>
+<h1>Office User Updating</h1>
 <p>This is the form to update the details of office-users of the system.</p>
 
 <%                    
@@ -19,7 +19,7 @@
             <input type="text" id="user-name" name="user-name" class="form-control form-control-user" value="<%=userToUp.getUserName()%>"><br>
         </div>
         <div class="col-sm-6 mb-3">                        
-            <input type="text" id="role" name="role" class="form-control form-control-user" value="<%=userToUp.getRole()%>"><br>
+            <input type="text" id="user-role" name="user-role" class="form-control form-control-user" value="<%=userToUp.getUserRole()%>"><br>
         </div> 
         <div class="col-sm-6 mb-3 position-relative" style="position: relative;">    
             <input type="password" id="passwordField" name="password" class="form-control form-control-user" value="<%=userToUp.getPassword()%>" 

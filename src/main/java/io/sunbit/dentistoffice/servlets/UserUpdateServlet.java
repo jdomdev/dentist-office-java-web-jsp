@@ -21,15 +21,13 @@ public class UserUpdateServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        Controller control = new Controller();
+            throws ServletException, IOException {        
         OfficeUser userToUp = new OfficeUser();
         // Get the user-id of the submitted form                
         String userIdParam = request.getParameter("user-id");
-        if (userIdParam != null && !userIdParam.isEmpty()) {
-            Long userId = Long.parseLong(userIdParam);
+        if (userIdParam != null && !userIdParam.isEmpty()) {            
             // Call the Controller->PersistenceController->JPA to get the user's details      
-            userToUp = control.getOfficeUser(userId);
+            userToUp = control.getOfficeUser(Long.parseLong(userIdParam));
             if (userToUp != null) {                
             } else {
                 System.out.println("<p>User does not exist.</p>");
@@ -38,23 +36,19 @@ public class UserUpdateServlet extends HttpServlet {
             System.out.println("<p>Invalid user-id.</p>");
         }
         HttpSession mySession = request.getSession();
-        mySession.setAttribute("userToUp", userToUp);
-        //request.setAttribute("officeUser", officeUser);
+        mySession.setAttribute("userToUp", userToUp);        
         response.sendRedirect("user-update.jsp");
     }    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        long userId = Long.parseLong(request.getParameter("user-id"));
-        //System.out.println("User ID: " + userId);//->Test.
+            throws ServletException, IOException {          
         String userName = request.getParameter("user-name");
         String password = request.getParameter("password");
-        String role = request.getParameter("role");
+        String role = request.getParameter("user-role");
         OfficeUser userToUp = (OfficeUser)request.getSession().getAttribute("userToUp");
         userToUp.setUserName(userName);
         userToUp.setPassword(password);
-        userToUp.setRole(role);
+        userToUp.setUserRole(role);
         control.updateUser(userToUp);
         // Reloading view users table from DB
         response.sendRedirect("OfficeUserServlet");

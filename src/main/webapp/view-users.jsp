@@ -7,12 +7,11 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">View Office-Users</h1>
-    <p class="mb-4">Users Full List.</p>
+    <h1 class="h3 mb-2 text-gray-800">View Office Users</h1>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Office-Users</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Active Users List</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -21,7 +20,7 @@
                         <tr>
                             <th>Id</th>
                             <th>User Name</th>
-                            <th>Rol</th>
+                            <th>Role</th>
                             <th style="width:210px">Option</th>
                         </tr>
                     </thead>
@@ -29,7 +28,7 @@
                         <tr>
                             <th>Id</th>
                             <th>User Name</th>
-                            <th>Rol</th> 
+                            <th>Role</th> 
                             <th style="width:210px">Option</th>
                         </tr>
                     </tfoot>
@@ -42,7 +41,7 @@
                         <tr>
                             <td id="userId<%=officeUser.getUserId()%>"><%=officeUser.getUserId()%></td>
                             <td><%=officeUser.getUserName()%></td>
-                            <td><%=officeUser.getRole()%></td>
+                            <td><%=officeUser.getUserRole()%></td>
                             <td style="display: flex; width: 230px">                            
                                 <form name="user-deletion" action="UserDeletionServlet" method="POST">
                                     <button type="submit" class="btn btn-danger btn-user" style="margin-right: 5px">

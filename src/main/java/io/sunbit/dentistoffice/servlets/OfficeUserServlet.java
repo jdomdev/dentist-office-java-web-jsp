@@ -3,7 +3,6 @@ package io.sunbit.dentistoffice.servlets;
 import io.sunbit.dentistoffice.logic.Controller;
 import io.sunbit.dentistoffice.logic.OfficeUser;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,25 +24,18 @@ public class OfficeUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<OfficeUser>officeUsers = new ArrayList<>();
-        officeUsers = control.getOfficeUsers();
+        List<OfficeUser>officeUsers = control.getOfficeUsers();        
         HttpSession mySession = request.getSession();
         mySession.setAttribute("officeUsers", officeUsers);
-        // Test.
-        System.out.println("Office-User: "+officeUsers.get(0));
         response.sendRedirect("view-users.jsp");
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //response.sendRedirect("index.jsp");//->test
-        
+            throws ServletException, IOException {                
         String userName = request.getParameter("user-name");
         String password = request.getParameter("password");
-        String rol = request.getParameter("rol");
-        // Test
-        //System.out.println("Name: "+userName+"\nPassword: "+password+"\nRol: "+rol);
-        control.createUser(userName, password, rol);
+        String userRole = request.getParameter("user-role");
+        control.createUser(userName, password, userRole);
         // Reloading view users table from DB
         response.sendRedirect("OfficeUserServlet");
     }
