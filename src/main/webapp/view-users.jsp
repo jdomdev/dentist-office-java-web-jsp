@@ -51,7 +51,7 @@
                                     <!-- This is the data(user-id) which is sending to /UserDeletionServlet-->
                                     <input type="hidden" name="user-id" value="<%=officeUser.getUserId()%>"/>                        
                                 </form>
-                                <form name="user-update" action="user-update.jsp" method="POST">
+                                <form name="user-update" action="UserUpdateServlet" method="GET">
                                     <button type="submit" class="btn btn-warning btn-user" style="margin-left: 5px">
                                         <i class="fas fa-pencil-alt"></i> Update
                                     </button>                                    

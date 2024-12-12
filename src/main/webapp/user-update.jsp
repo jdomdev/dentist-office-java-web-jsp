@@ -7,22 +7,11 @@
 <h1>Office-User Updating</h1>
 <p>This is the form to update the details of office-users of the system.</p>
 
-<%
-    // Get the user-id of the submitted form
-    String userIdParam = request.getParameter("user-id");
-
-    if (userIdParam != null && !userIdParam.isEmpty()) {
-        Long userId = Long.parseLong(userIdParam);
-
-        // Call the Controller->PersistenceController->JPA to get the user's details
-        Controller control = new Controller();
-        OfficeUser officeUser = control.getOfficeUser(userId);
-
-        if (officeUser != null) {
-
-// Display user data in a form for editing
+<%                    
+    OfficeUser officeUser = (OfficeUser)request.getSession().getAttribute("officeUser");
+%>   
 %>
-
+<!-- Display user data in a form for editing -->
 <form class="user-update" action="UserUpdateServlet" method="POST">
     <input type="hidden" name="user-id" value="<%=officeUser.getUserId()%>">
     <div class="form-group col">
@@ -53,15 +42,5 @@
     </button>
 
 </form>
-
-
-<%
-        } else {
-            out.println("<p>User does not exist.</p>");
-        }
-    } else {
-        out.println("<p>Invalid user-id.</p>");
-    }
-%>
 
 <%@include file="components/body-end.jsp" %>

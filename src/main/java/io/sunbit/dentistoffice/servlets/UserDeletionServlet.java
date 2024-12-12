@@ -2,7 +2,6 @@ package io.sunbit.dentistoffice.servlets;
 
 import io.sunbit.dentistoffice.logic.Controller;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,7 +28,8 @@ public class UserDeletionServlet extends HttpServlet {
             long userId = Long.parseLong(request.getParameter("user-id"));
             //System.out.println("User ID: " + userId);//->Test.
             control.deleteUser(userId);
-            response.sendRedirect("view-users.jsp");
+            // Reloading view users table from DB
+            response.sendRedirect("OfficeUserServlet");
     }  
     @Override
     public String getServletInfo() {
