@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "UserDeletionServlet", urlPatterns = {"/UserDeletionServlet"})
-public class UserDeletionServlet extends HttpServlet {
+@WebServlet(name = "DentistDeletionServlet", urlPatterns = {"/DentistDeletionServlet"})
+public class DentistDeletionServlet extends HttpServlet {
 
     Controller control = new Controller();
 
@@ -25,13 +25,14 @@ public class UserDeletionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            long userId = Long.parseLong(request.getParameter("user-id"));            
-            control.deleteOfficeUser(userId);
-            // Reloading view users table from DB
-            response.sendRedirect("OfficeUserServlet");
-    }  
+        long dentistId = Long.parseLong(request.getParameter("dentist-id"));            
+        control.deleteOfficeUser(dentistId);
+        // Reloading view dentists table from DB
+        response.sendRedirect("DentistServlet");
+    }
     @Override
     public String getServletInfo() {
         return "Short description";
     }
+
 }

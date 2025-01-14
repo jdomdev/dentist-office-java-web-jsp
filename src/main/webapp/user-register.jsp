@@ -5,7 +5,7 @@
 <%@include file="components/body-start.jsp" %>
 
 <h1>Office User Register</h1>
-<p>Registration form for dental clinic employees.</p>
+<p>Registration form for dental clinic employees</p>
 
 <form class="user" action="OfficeUserServlet" method="POST">
     <div class="form-group col">

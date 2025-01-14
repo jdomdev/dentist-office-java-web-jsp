@@ -49,7 +49,7 @@ public class UserUpdateServlet extends HttpServlet {
         userToUp.setUserName(userName);
         userToUp.setPassword(password);
         userToUp.setUserRole(role);
-        control.updateUser(userToUp);
+        control.updateOfficeUser(userToUp);
         // Reloading view users table from DB
         response.sendRedirect("OfficeUserServlet");
     }   

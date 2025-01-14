@@ -35,7 +35,7 @@ public class OfficeUserServlet extends HttpServlet {
         String userName = request.getParameter("user-name");
         String password = request.getParameter("password");
         String userRole = request.getParameter("user-role");
-        control.createUser(userName, password, userRole);
+        control.createOfficeUser(userName, password, userRole);
         // Reloading view users table from DB
         response.sendRedirect("OfficeUserServlet");
     }

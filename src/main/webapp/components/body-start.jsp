@@ -45,7 +45,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
                         <a class="collapse-item" href="dentist-register.jsp">Dentist Register</a>
-                        <a class="collapse-item" href="">View Dentists</a>
+                        <a class="collapse-item" href="DentistServlet">View Dentists</a>
                     </div>
                 </div>
             </li>
@@ -61,8 +61,8 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
-                        <a class="collapse-item" href="">Patient Register</a>
-                        <a class="collapse-item" href="">View Patients</a>                                              
+                        <a class="collapse-item" href="patient-register.jsp">Patient Register</a>
+                        <a class="collapse-item" href="PatientServlet">View Patients</a>                                              
                     </div>
                 </div>
             </li>
@@ -72,14 +72,14 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOfficeUsers"
                     aria-expanded="true" aria-controls="collapseOfficeUsers">
                     <i class="fas fa-user-injured"></i>
-                    <span>Office User</span>
+                    <span>Office Users</span>
                 </a>
                 <div id="collapseOfficeUsers" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Options:</h6>
-                        <a class="collapse-item" href="user-register.jsp">Office User Register</a>
-                        <a class="collapse-item" href="OfficeUserServlet">View Office Users</a>                                              
+                        <a class="collapse-item" href="user-register.jsp">Users Register</a>
+                        <a class="collapse-item" href="OfficeUserServlet">View Users</a>                                              
                     </div>
                 </div>
             </li>

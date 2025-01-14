@@ -10,16 +10,16 @@ public class Secretary extends Person{
     //private long secretaryId;
     private String department;
     @OneToOne
-    private OfficeUser user;
+    private OfficeUser officeUser;
     // Constructors
     public Secretary() {
     }
-    public Secretary(String department, OfficeUser user, long id, String dni, 
+    public Secretary(String department, OfficeUser officeUser, long id, String dni, 
                      String name, String surname, String phone, String address, 
                      LocalDate birthDate) {
         super(id, dni, name, surname, phone, address, birthDate);
         this.department = department;
-        this.user = user;
+        this.officeUser = officeUser;
     }
     // Setters    
     public void setDepartment(String department) {

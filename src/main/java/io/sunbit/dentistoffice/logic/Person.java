@@ -10,10 +10,6 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 
-/**
- * We instruct it to build a table for each child class it has.
- * @author bytetech
- */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person implements Serializable {
@@ -26,7 +22,7 @@ public class Person implements Serializable {
     private String name;
     private String surname;
     private String phone;
-    private String address;
+    private String email;
     // Date Mapping
     // It's not necessary: @Temporal(TemporalType.TIMESTAMP)
     private LocalDate birthDate;
@@ -34,13 +30,13 @@ public class Person implements Serializable {
     public Person() {
     }
     public Person(long id, String dni, String name, String surname, 
-                  String phone, String address, LocalDate birthDate) {
+                  String phone, String email, LocalDate birthDate) {
         this.id = id;
         this.dni = dni;
         this.name = name;
         this.surname = surname;
         this.phone = phone;
-        this.address = address;
+        this.email = email;
         this.birthDate = birthDate;
     }
 
@@ -60,8 +56,8 @@ public class Person implements Serializable {
     public String getPhone() {
         return phone;
     }
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
     public LocalDate getBirthDate() {
         return birthDate;
@@ -82,8 +78,8 @@ public class Person implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public void setAddress(String address) {
-        this.address = address;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
